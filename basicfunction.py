@@ -39,6 +39,50 @@ print(np.sort(d))
 filter : getting some element out of an existing array and creating a new array out of them
 '''
 
+'''
+Shuffle : changing the arrangement of the element 
+function-> np.random.shuffle(array)
+'''
+var = np.array([7,8,9,10])
+np.random.shuffle(var)
+print(var)
+
+
+'''
+Unique: getting the uniqe value and its other parameter 
+function -> np.unique(array)
+'''
+xz = np.array([7,8,9,10,7,9,11,10])
+
+y = np.unique(xz, return_index=True, return_counts=True)
+print(y)
+
+'''
+resize : changing size of array
+np.resize(array, (row, coloumn))
+'''
+
+var1 = np.array([7,8,9,10])
+y = np.resize(var1, (3, 2))
+print(y)
+
+'''
+Flateen : covert 2d array in 1 do in a order 
+{C, F, A, K} -> oreer
+C -> faltten in row order
+F -> coloumn order
+A ->
+
+function -> array.flatten(order) -: by default order is 'C'
+'''
+
+print(y.flatten())
+
+'''
+Ravel: similar covert in 1D
+'''
+print(np.ravel(y))
+
 var = np.array([7,8,4,9])
 f = [True,False,False,True]
 r = var[f]
