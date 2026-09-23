@@ -114,3 +114,71 @@ Then extract:
 print(arr2[(0,1),0:2:]) # here we telling row and extract first 2 value 
 print(arr2[(1,2),1::])  # here we are starting at first so we skip the 0 index value as we have to only print after that to get second 2d output 
 
+
+'''
+Level 3: Array Operations
+Q11. Element-wise Arithmetic
+Given a=[10,20,30,40] and b=[1,2,3,4], perform addition, subtraction, multiplication, and division without a Python
+loop.
+'''
+import numpy as np 
+
+a = np.array([10,20,30,40])
+b = np.array([1,2,3,4])
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(np.multiply(a , b))
+
+'''
+Q12. Scalar Operations
+Given arr=[5,10,15,20], create arrays representing every value +10, -5, ×2, and ÷5.
+'''
+c = np.array([5,10,15,20])
+print(c + 10)
+print(c - 5)
+print(c * 2)
+print(c / 5)
+
+'''
+Q13. Comparison Operations
+Given arr=[10,25,5,40,15,30], evaluate arr > 20, arr < 15, and arr == 25. Let NumPy perform the comparisons.
+'''
+d = np.array([10,25,5,40,15,30])
+print(np.greater(d, 20))
+print(d > 20) # both can be used to evaluate 
+print(d < 20)
+print(d == 25)
+'''
+Q14. Basic Statistics
+For marks=[78,65,89,92,55,73,81], find minimum, maximum, average, and sum.
+'''
+e = np.array([78,65,89,92,55,73,81])
+print(np.min(e))
+print(np.max(e))
+print(np.average(e))
+print(np.sum(e))
+
+'''
+Q15. Position of Min/Max
+For arr=[45,12,78,23,91,34], find the minimum value, maximum value, index of minimum, and index of maximum.
+Practice argmin()/argmax().
+'''
+f = np.array([45,12,78,23,91,34])
+print(np.min(f))
+print(np.max(f))
+print(np.min_index(f)) #i can not remember the function name we used to get the index of minimum or even there is function do to direclty lets first make this up by ourself
+
+min_v = np.min(f)
+print(np.where(f == min_v)) #  i was using only one equals but we have to use == for in where for comparison 
+max_v = np.max(f)
+print(np.where(f == max_v))
+
+print(np.argmin(f)) # ok so we can use arg to get index value of max and min its a build in function 
+print(np.argmax(f))
+
+
+
+
