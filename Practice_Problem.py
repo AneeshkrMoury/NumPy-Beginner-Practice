@@ -179,6 +179,61 @@ print(np.where(f == max_v))
 print(np.argmin(f)) # ok so we can use arg to get index value of max and min its a build in function 
 print(np.argmax(f))
 
+'''
+Level 4: Shape & Reshaping
+Q16. Reshape
+Create arr=np.arange(1,13) and reshape it into a 3 × 4 array.
+'''
+import numpy as np
+arr = np.arange(1,13) # there is something we use to tell the dimenson of array something like ndhim let me look for it i not able to remember it right now sorry ohh we can simply use reshape function for this lets try it out 
+a = arr.reshape(3,4)
+print(a) # yep .reshape for changing the shape 
+print(a.ndim) # ndhim use the find the dimension of array
+print(a.shape) # to check the shape of an array
+'''
+Q17. Different Shapes
+Take arr=np.arange(1,13) and reshape it into 2×6, 3×4, 4×3, and 6×2. Print the shape after each operation.
+'''
+arr=np.arange(1,13)
+a1 = arr.reshape(2,6)
+print(np.shape(a1))
+a2 = arr.reshape(3,4)
+print(np.shape(a2))
+a3 = arr.reshape(4,3)
+print(np.shape(a3))
+a4 = arr.reshape(6,2)
+print(np.shape(a4))
 
+
+'''
+Q18. Shape Detective
+For arr=[[1,2,3],[4,5,6]], predict ndim, shape, and size before running the code. Then verify.
+
+Ans -> ndim = 2,  shape = 2 * 3 (2row, 3column), size = 6
+'''
+arr=np.array([[1,2,3],[4,5,6]])
+print(f"{arr.ndim}\n{arr.shape}\n{arr.size}")
+
+'''
+Q19. Flattening
+Convert the 3 × 3 array 1 through 9 into a 1-D array using a NumPy method you have learned.
+'''
+#i do not remeber the exact method i usd during learning session for flattening but lets try if can do it 
+arr = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(f"{arr}\n{arr.shape}")
+flaten = arr.flatten("A") # i can recall something about learning about few things like this lets me check form my learning material 
+print(flaten)
+#F flatten with coloum vise vertically
+#C defaul in sequence first row seoncd then third row 
+#A IN CONTINEOUS FORM 
+
+
+'''Q20. Reshape Challenge
+Create numbers 1 through 24 and reshape them into 4×6, then 3×8.'''
+
+arr = np.arange(1,25)
+a = arr.reshape(4,6)
+b = arr.reshape(3,8)
+print(f"{a}\n\n{b}")
 
 
