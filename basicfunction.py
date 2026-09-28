@@ -68,7 +68,7 @@ print(y)
 
 '''
 Flateen : covert 2d array in 1 do in a order 
-{C, F, A, K} -> oreer
+{C, F, A, K} -> order
 C -> faltten in row order
 F -> coloumn order
 A ->
