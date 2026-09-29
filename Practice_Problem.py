@@ -237,3 +237,45 @@ b = arr.reshape(3,8)
 print(f"{a}\n\n{b}")
 
 
+'''
+Level 5: Insert, Delete & Manipulation
+Q21. Insert an Element
+Given arr=[10,20,30,40], insert 25 between 20 and 30. Expected: [10 20 25 30 40].
+'''
+import numpy as np
+arr = np.array([10,20,30,40])
+arr = np.insert(arr,2,25) # pass array naem , postion where to insert and value to insert
+print(arr)
+
+
+'''Q22. Delete an Element
+Given arr=[10,20,30,40,50], delete 30 and then delete the last element.
+'''
+arr = np.array([10,20,30,40,50])
+arr = np.delete(arr, 2) # pass the array and position of item to delete 
+print(arr)
+
+'''Q23. Insert into 2-D Array
+Given [[1,2],[3,4]], insert another row [5,6] so the result is [[1,2],[3,4],[5,6]].
+'''
+arr = np.array([[1,2],[3,4]])
+# arr = np.insert(arr,[2][0],(5,6)) # so not getting right way to insert in 2d arrya let me think other ways
+arr1 = np.append(arr, [[5],[6]], axis=1) # axis 1 add value in y axis like vertically coloumn way 
+arr2 = np.append(arr, [[5,6]], axis=0)  # axis 0 add value in x axis like horizontal rows way
+print(arr1)
+print(arr2)
+
+'''
+Q24. Delete a Row
+Given [[1,2,3],[4,5,6],[7,8,9]], delete the middle row. Then make another version deleting the middle column
+'''
+aar = np.array([[1,2,3],[4,5,6],[7,8,9]])
+arr = np.delete(aar, 1, axis=0) # ok here i passed row addres as 1 and with this also added axis to tell that remove the elemnet along the x axis in row 1 
+# arr = np.delete(aar, 1) # if i give like this it remove the element at index 1 in row one and flatten the array
+arr = np.delete(aar, 1, axis=1) # remove all element along y axis at postion 1 in each row
+print(arr)
+
+arr1 = np.delete(aar, 1, axis=0 )
+
+aar3 = np.array([[1,2,3],[4,6],[7,8,9]]) # we need to mentain the shape we can not remove a element and keep the shape both at same time unless we replace it withsome think else thats why array was getting flattened i thind when i removed only one element 
+print(aar3)
