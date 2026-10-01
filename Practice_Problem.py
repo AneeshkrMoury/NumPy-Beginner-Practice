@@ -323,3 +323,94 @@ arr = np.array([0, np.pi/2, np.pi])
 print(np.sin(arr))
 print(np.cos(arr))
 # i do not remember the exact function name we use to get cosine so let me google it oops my bad cosine is cos i am like 0 in math ingore this pls 
+
+'''
+Level 7: Broadcasting
+Q29. Simple Broadcasting
+Given [[10,20,30],[40,50,60]], add [1,2,3] to every row without using a loop.
+'''
+import numpy as np
+arr = np.array([[10,20,30],[40,50,60]])
+b = [1,2,3]
+res = np.add(arr , b) # we use add in these type of case as using sum reulst in com of all element 
+print(res)
+
+'''
+Q30. Broadcasting Challenge
+Given a=[[1],[2],[3]] and b=[10,20,30], calculate a+b. Before running it, predict the result's shape and explain why
+NumPy allows the operation.
+
+a + b = [[11, 21, 31],[21, 22, 23], [31, 32, 33]]
+shape  = 3, 3 
+why -> i am not really sure why but its something leated to matrix property i think and also there is a rule that tell where this is ossible or not through sape (3,1),(1,3) we do some comparison here i forget that 
+'''
+a = np.array([[1],[2],[3]])
+b = np.array([10,20,30])
+print(np.add(a,b))
+
+'''
+Bonus Challenges
+Challenge 1: Student Marks Analyzer
+Given:
+marks = [[78,85,90],[65,72,80],[88,91,95],[55,60,70]]
+Treat each row as a student and each column as a subject. Find: Total marks of each studentAverage marks of each
+student Highest mark in each subject, Lowest mark in each subject, Overall highest mark, Index of the student
+containing the highest mark Try to use NumPy operations rather than loops.
+'''
+marks = np.array([[78,85,90],[65,72,80],[88,91,95],[55,60,70]]) # so we have 4 student as row  , and there number are store in coloumns and each coloumn is a subject so 3 subjects 
+total = np.sum(marks, axis=1) # total mark of each student [253, 217, 274,185]
+print(total)
+high_marks = np.max(marks, axis=1)
+print(high_marks)
+low_marks = np.min(marks, axis=1)
+print(low_marks)
+#overall highest marks i do not understand does it means the student with highest marks or the highest makr coloumn 
+
+#1 -> overall highest mark in total
+hmt = np.max(total)
+print(hmt)
+#overall highest marks 
+hm = np.max(high_marks)
+print(hm)
+
+#index of student with highest marks 
+
+print(np.where(total == hmt ))
+'''
+Challenge 2: Temperature Analyzer
+Given:
+temperature = [[32,34,31,30,35],[28,29,31,30,27],[36,38,35,34,37]]
+Each row is a location and each column is a day. Find: average temperature for each location, hottest temperature
+overall, coldest temperature overall, day-wise average temperature, cumulative temperature for each location
+'''
+temp = np.array([[32,34,31,30,35],[28,29,31,30,27],[36,38,35,34,37]])
+#avgerage temp.
+avg_temp = np.average(temp, axis=1) #there is something else as well we can use for getting average i think that mean 
+print(avg_temp)
+avg_temp = np.mean(temp, axis=1)
+print(avg_temp) # yep both are working 
+
+#hottest tepm. overall
+hot_temp = np.max(temp)
+print(hot_temp)
+
+#coldest tepm. overall
+cold_temp = np.min(temp)
+print(cold_temp)
+
+# day wise avgerage temp.
+day_avg_temp = np.average(temp, axis=0) #there is something else as well we can use for getting average i think that mean 
+print(day_avg_temp)
+
+#cumulative temp for each location
+cumsum_temp = np.cumsum(temp, axis=1)
+print(cumsum_temp)
+'''
+Challenge 3: Broadcasting Mini-Problem
+Given prices = [[100,200,300],[150,250,350],[120,220,320]] and discount = [10,20,30], use broadcasting to calculate
+the discounted prices. No loop.
+'''
+price = np.array([[100,200,300],[150,250,350],[120,220,320]])
+discount =[10,20,30]
+dicounted_price = np.subtract(price, discount)
+print(dicounted_price)
