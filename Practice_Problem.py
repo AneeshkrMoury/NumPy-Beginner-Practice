@@ -279,3 +279,47 @@ arr1 = np.delete(aar, 1, axis=0 )
 
 aar3 = np.array([[1,2,3],[4,6],[7,8,9]]) # we need to mentain the shape we can not remove a element and keep the shape both at same time unless we replace it withsome think else thats why array was getting flattened i thind when i removed only one element 
 print(aar3)
+
+
+'''
+Level 6: Axis + Functions
+Q25. Column-wise vs Row-wise Minimum
+For [[10,20,30],[5,25,15],[8,12,40]], find the minimum column-wise and row-wise. Before running it, predict what
+axis=0 and axis=1 will produce.
+
+axis 0 -> 10 , 5 , 8
+axis 1-> 5 , 12, 15  # not sure lets check it  this is incorrect our in output we got reversse of what we gueesed 0 on 1 and 1 on 0
+'''
+import numpy as np
+
+arr = np.array([[10,20,30],[5,25,15],[8,12,40]])
+print(np.max(arr, axis=0))
+print(np.max(arr, axis=1))  # oops its max we have to check min
+print(np.min(arr, axis=0))
+print(np.min(arr, axis=1)) 
+
+
+'''
+Q26. Cumulative Sum
+For arr=[1,2,3,4,5], calculate the cumulative sum. Then try cumulative product.
+'''
+#cumlative sum is like adding all number togeather => 0+1= 1, 1+2 = 3 , 3+3= 6 , 6+4 = 10 , 10+5 = 15 we get these in an new array form 
+arr = np.array([1,2,3,4,5])
+# i do not remeber eexact function we use for this so ill gonna give it a guess i first tried sum but it did not work so used google
+print(np.cumsum(arr))
+print(np.cumprod(arr))
+'''
+Q27. Square Root
+For arr=[1,4,9,16,25], find the square root of every element using NumPy.
+'''
+arr = np.array([1,4,9,16,25])
+print(np.sqrt(arr))
+
+'''
+Q28. Trigonometric Functions
+Create arr=[0, np.pi/2, np.pi]. Find sine and cosine, then inspect the results
+'''
+arr = np.array([0, np.pi/2, np.pi])
+print(np.sin(arr))
+print(np.cos(arr))
+# i do not remember the exact function name we use to get cosine so let me google it oops my bad cosine is cos i am like 0 in math ingore this pls 
